@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta https-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/Incode02.ico" />
+  <link href="../styles/reset.css" rel="stylesheet" type="text/css" />
+  <link href="../styles/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/padraoCliente.css" />
+  <script type="text/javascript" src="../js/scripts.js"></script>
+  <script type="text/javascript" src="../js/sweet.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <title>Incode</title>
+</HEAD>
+<body>
+    <section class="d-flex justify-content-between header">
+        <div class="ajust-width">
+          <!-- /??/ ? usado para juntar o webserver e o scriptdir-->
+          <a href="../lista_rotas.htm">
+            <img class="logo-cliente" src="../Imagens/logo_itau.png" alt="Logo Cliente" />
+          </a>
+        </div>
+        <div>
+          <h1>Incode®- Documentação de Sistemas</h1>
+        </div>
+        <div class="text-end p-2 ajust-width">
+          <a href="http://www.beltsysplus.com.br">
+            <img class="logo-header p-2" src="../Imagens/logo-incode.png" alt="Logo Incode" /> 
+          </a>
+        </div>
+      </section>
+<br>
+<div class="container-sm">
+  <table class="table">
+    <caption>Características Função CMenu:&nbsp;:&nbsp;carregaMenuXML (Menu.cpp)</caption>
+    <tbody>
+      <tr>
+        <td class="w-50">Linha de início: 202</td>
+      </tr>
+      <tr>
+        <td class="w-50">Linha final: 225</td>
+      </tr>
+      <tr>
+        <td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td class="w-50">Nome</td>
+                <td class="w-50">Tipo</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan=2 ><b>Não utiliza</b></td>					
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Diagrama de Sequência</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgDiagramaSequencia, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgDiagramaSequencia, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+<img id="imgDiagramaSequencia" src="../imagens/Diagrama-Seq-Itau.sis-itau-wn-app-servidor-build-ILBKLCP_vob_an-Bibliotecas-BKLBib-Menu--CMenu¢¢carregaMenuXML.jpg">
+          </td>
+        </tr>
+      </tbody>
+  </div>
+</div>
+<div class="container w-75">
+    <div class="table-responsive">
+      <table class="table no-hover tbl-layout-fixo">
+        <caption>Fonte</caption>
+        <tbody class="text-start">
+          <tr>
+            <td class="td-scroll">      
+              CMenu:&nbsp;:&nbsp;carregaMenuXML                         
+  void&nbsp;CMenu:&nbsp;:&nbsp;carregaMenuXML&nbsp;() <br>
+  { <br>
+  String&nbsp;xmlMenu,&nbsp;xmlMenuBloqueio; <br>
+  char&nbsp;dic2Xml[128]; <br>
+  &nbsp <br>
+  strcpy&nbsp;(dic2Xml,&nbsp;"D:\\Dic2_XML\\"); <br>
+  &nbsp <br>
+  #ifdef&nbsp;_DEBUG <br>
+  #defineARQ_CONF_CLEARCASE"D:\\INET\\TABS\\ClearCase.CFG" <br>
+  if&nbsp;(!_access(ARQ_CONF_CLEARCASE,&nbsp;0)) <br>
+  GetPrivateProfileString&nbsp;("PATH",&nbsp;"DIC2_XML",&nbsp;"D:\\Dic2_XML\\",&nbsp;dic2Xml,&nbsp;sizeof(dic2Xml)-1,&nbsp;ARQ_CONF_CLEARCASE); <br>
+  #endif <br>
+  &nbsp <br>
+  xmlMenu&nbsp;=&nbsp;dic2Xml; <br>
+  xmlMenu&nbsp;+=&nbsp;"MENU\\SPNB\\XMLMenu.xml"; <br>
+  &nbsp <br>
+  xmlMenuBloqueio&nbsp;=&nbsp;dic2Xml; <br>
+  xmlMenuBloqueio&nbsp;+=&nbsp;"MENU\\SPNB\\XMLMenuBloqueio.xml"; <br>
+  &nbsp <br>
+  if&nbsp;(&nbsp;loadMenuXML&nbsp;(xmlMenu)&nbsp;==&nbsp;true&nbsp;) <br>
+  loadBloqueioXML&nbsp;(xmlMenuBloqueio); <br>
+  &nbsp <br>
+  return; <br>
+  } <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Fluxo</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgFluxoMetodo, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgFluxoMetodo, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+            <img id="imgFluxoMetodo" src="../imagens/FluxoMetodo-Itau.sis-itau-wn-app-servidor-build-ILBKLCP_vob_an-Bibliotecas-BKLBib-Menu--CMenu¢¢carregaMenuXML.jpg">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br><br><br>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><img src="../imagens/bitmap/fluxo0.bmp"  width=36 height=24>Função analisada</td>
+          <td><img src="../imagens/bitmap/fluxo13.bmp" width=36 height=24>Função chamada</td>
+          <td><img src="../imagens/bitmap/fluxo1189.bmp" width=36 height=24>Acesso a Banco de Dados</td>
+          <td><img src="../imagens/bitmap/fluxo21.bmp" width=36 height=24>
+            Condição/Ciclo :...(F) Condição Falsa /...(T) Condição Verdadeira /...(W) Ciclo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

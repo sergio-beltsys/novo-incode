@@ -1,0 +1,402 @@
+html {
+	font-family: var(--var-fonte-family);
+}
+
+.header {
+	background-color: var(--var-cor-fundo1);
+	color: var(--var-cor-fonte1);
+}
+
+.logo-cliente{
+	padding: 10px 0 10px 10px;
+}
+
+.logo-header {
+	width: 90%;
+}
+.ajust-width{
+	width: 15%;
+}
+
+.footer {
+	background-color: var(--var-cor-fundo1);
+	color: var(--var-cor-fonte1);
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: var(--var-cor-borda) 1px solid;
+	z-index: 3;
+}
+
+.footer p {
+	font-size: 20px;
+	margin: auto;
+}
+
+/* FIM HEADER & FOOTER */
+
+/* MENU COM ICONES */
+.wrap {
+	max-width: 70%;
+	margin: 50px auto;
+}
+
+.wrap ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.wrap ul li {
+	min-width: 20%;
+	display: inline-block;
+	margin: 1%;
+	text-align: -webkit-center;
+}
+
+.wrap ul li:last-child {
+	margin-right: 0;
+}
+
+.wrap ul li a {
+	position: relative;
+	border-radius: 50%;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	height: 8em;
+	width: 8em;
+	background-color: var(--var-cor-fundo1);
+	border: solid 2px var(--var-cor-borda);
+}
+
+.wrap ul li a img {
+	width: 45%;
+	position: relative;
+	z-index: 2;
+}
+
+.wrap ul li a:hover img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.wrap ul li a:hover+p {
+	color: var(--var-cor-sobreposta1);
+}
+
+.wrap ul li a:after {
+	opacity: 0;
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	margin-top: -5px;
+	margin-left: -5px;
+	height: 10px;
+	width: 10px;
+	transition: all 0.7s cubic-bezier(0.25, 0.19, 0.64, 1.36);
+	background-color: var(--var-cor-sobreposta1);
+	border-color: var(--var-cor-sobreposta1);
+}
+
+.wrap ul li a:hover:after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 8em;
+	height: 8em;
+}
+
+.wrap ul li p {
+	color: var(--var-cor-fonte2);
+	font-weight: bold;
+	margin: 0;
+	transition: color 0.7s ease;
+	font-size: 16px;
+}
+
+/* FIM MENU COM ICONES */
+
+/* Pagdef antigo */
+
+/* .inpmenu {
+	position: relative;
+	height: 32px;
+	border-radius: 4px;
+	padding-left: 30px;
+	border: none;
+}
+
+.inpmenu .form-control {
+	height: 50px
+}
+
+.inpmenu .form-control:focus {
+	box-shadow: none;
+	border: 1px solid #000
+}
+
+.inpmenu i {
+	position: absolute;
+	right: 10px;
+	top: 15px
+}
+
+.table-primary {
+	--bs-table-bg: #fff;
+	--bs-table-striped-bg: #c5d7f2;
+	--bs-table-striped-color: #000;
+	--bs-table-active-bg: #bacbe6;
+	--bs-table-active-color: #000;
+	--bs-table-hover-bg: #bfd1ec;
+	--bs-table-hover-color: #000;
+	color: #00a69e;
+	border-color: #cbcdcf;
+} */
+/* FIM pagdef antigo */
+
+/* NavBar */
+#navbarDropdown {
+	color: #000;
+	font-weight: bold;
+}
+
+.navbarDropdown-active {
+	background-color: var(--var-cor-sobreposta1);
+}
+
+#navbarDropdown:hover {
+	background-color: var(--var-cor-sobreposta1);
+}
+
+.dropdown-menu>div:hover {
+	background-color: var(--var-cor-sobreposta1);
+}
+
+/*Fim NavBar */
+
+.primary-bg {
+	background-color: var(--var-cor-fundo1) !important;
+	color: var(--var-cor-fonte1) !important;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.cor-destaque1 {
+	background-color: var(--var-cor-destaque1);
+	color: var(--var-cor-fonte1);
+}
+
+
+/* Inicio Modulos */
+.icones-menores {
+	margin: 0 auto;
+}
+
+.icones-menores>ul>li>p {
+	font-size: 13px !important;
+	margin: 0;
+}
+
+.icones-menores ul li a {
+	width: 4em;
+	height: 4em;
+}
+
+.icones-menores ul li a:hover:after {
+	width: 4em;
+	height: 4em;
+}
+
+.link-primary {
+	color: #0d6efd !important;
+}
+
+
+.padding-right1 {
+	padding-right: 1em;
+}
+
+
+
+.destaque-texto {
+	color: red !important;
+}
+
+.destaque-texto2 {
+	color: black
+}
+
+.destaque-texto3 {
+	color: blue !important;
+}
+
+.list-group-item-action:hover {
+	background-color: rgba(0, 0, 0, 0.075);
+}
+
+.img-botoes {
+	max-width: 17px;
+}
+
+.table>thead {
+	background-color: rgb(255 255 0 / 32%);
+	color: var(--var-cor-fonte2);
+}
+
+.table>thead>tr>td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 50%;
+}
+
+.table>caption {
+	background-color:  #ffc44a !important;
+	color: var(--var-cor-fonte1) !important;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+
+	caption-side: top;
+}
+
+.table>tbody>tr:nth-of-type(odd) {
+	background-color: rgba(0, 0, 0, 0.041);
+}
+
+.table>tbody>tr:hover {
+	--bs-table-accent-bg: var(--var-table-hover);
+	color: var(--bs-table-hover-color);
+}
+
+.table>:not(caption)>* {
+	border-width: 1px 0;
+	border-color: #212529 !important;
+}
+
+.table>:not(caption)>*>* {
+	border-width: 0 1px;
+	border-color: #212529 !important;
+}
+
+.no-hover>tbody>tr:nth-of-type(odd) {
+	background-color: inherit;
+}
+
+.no-hover>tbody>tr:hover {
+	--bs-table-accent-bg: inherit;
+	color: inherit;
+}
+
+.cabecalho-lista {
+	background-color: var(--var-cor-fundo2);
+	color: var(--var-cor-fonte2);
+}
+
+.no-border>:not(caption)>*>* {
+	border-width: 0;
+}
+
+.no-border>:not(caption)>* {
+	border-width: 1px;
+}
+
+.no-color {
+	background-color: white !important;
+}
+
+.terceiroHeader {
+	background-color: var(--var-cor-terceiroHeader) !important;
+}
+
+.configuracaoLista>td {
+	padding: 0;
+	vertical-align: top;
+}
+
+.trechoSource {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 13px;
+	margin: 10px;
+	width: 480px;
+}
+
+.trechoSource>thead>tr>th {
+	border-radius: 15px 15px 0 0;
+
+	padding: 8px;
+	font-size: 14px;
+	color: #039;
+	background: #b9c9fe;
+}
+
+.trechoSource td {
+	padding: 8px;
+	background: #e8edff;
+	border-top: 1px solid #fff;
+	color: #669;
+}
+
+.trechoSource tbody tr:hover td {
+	background: #d0dafd;
+}
+
+.infoSmall {
+	font-style: italic;
+	font-size: small;
+}
+
+.btn-ok {
+	background-color: var(--var-cor-btnOk1);
+	color: var(--var-cor-fonte-btn1);
+}
+
+.btn-cancel {
+	background-color: var(--var-cor-btnCancel1);
+	color: var(--var-cor-fonte-btn1);
+}
+
+
+.config-modal {
+	max-height: 90vh !important;
+	overflow-x: auto;
+}
+
+.icon-eye {
+	max-width: 25px;
+	padding-left: 5px
+}
+
+/* bot�o de confirmar do modal */
+/* bot�o de export pra XLS do modal */
+.swal2-confirm{
+	background-color: var(--var-cor-btnOk1) !important;
+}
+
+/* bot�o de negar do modal */
+/* bot�o de export pra DOC do modal */
+.swal2-deny{
+	background-color: var(--var-cor-btnOk1) !important;
+}
+
+table.tbl-layout-fixo {
+	table-layout: fixed;
+}
+
+td.td-scroll {
+	overflow-x: scroll;
+}
+
+.inpmenu{
+	width: 100%;
+}

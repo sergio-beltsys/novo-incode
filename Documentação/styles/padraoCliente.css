@@ -1,0 +1,30 @@
+:root{
+    --var-cor-fundo1: #ff7200;
+    --var-cor-sobreposta1: #ffcc00;
+    
+    --var-cor-fonte1: #fff;
+    --var-cor-borda1: #000000;
+    --var-cor-botao1: #212529;
+    --var-cor-destaque1: #2727f3;
+
+    --var-cor-fonte2: #000000;
+
+    --var-fonte-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+    --var-cor-fundo2: rgba(255, 255, 0, 0.571);
+
+    
+    --var-cor-fundo3: #EC7000;
+    --var-cor-fonte3: #fff;
+
+    --var-cor-terceiroHeader: #cfe2ff;
+
+
+    --var-cor-btnOk1: #00b3ff;
+    --var-cor-btnCancel1: #ff3838;
+    --var-cor-fonte-btn1: #000;
+
+    --var-table-hover:  #ffffa095;
+
+}

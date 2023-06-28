@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta https-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/Incode02.ico" />
+  <link href="../styles/reset.css" rel="stylesheet" type="text/css" />
+  <link href="../styles/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/padraoCliente.css" />
+  <script type="text/javascript" src="../js/scripts.js"></script>
+  <script type="text/javascript" src="../js/sweet.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <title>Incode</title>
+</HEAD>
+<body>
+    <section class="d-flex justify-content-between header">
+        <div class="ajust-width">
+          <!-- /??/ ? usado para juntar o webserver e o scriptdir-->
+          <a href="../lista_rotas.htm">
+            <img class="logo-cliente" src="../Imagens/logo_itau.png" alt="Logo Cliente" />
+          </a>
+        </div>
+        <div>
+          <h1>Incode®- Documentação de Sistemas</h1>
+        </div>
+        <div class="text-end p-2 ajust-width">
+          <a href="http://www.beltsysplus.com.br">
+            <img class="logo-header p-2" src="../Imagens/logo-incode.png" alt="Logo Incode" /> 
+          </a>
+        </div>
+      </section>
+<br>
+<div class="container-sm">
+  <table class="table">
+    <caption>Características Função Universal2:&nbsp;:&nbsp;parserOrigemCampo (Univers2.cpp)</caption>
+    <tbody>
+      <tr>
+        <td class="w-50">Linha de início: 8990</td>
+      </tr>
+      <tr>
+        <td class="w-50">Linha final: 9123</td>
+      </tr>
+      <tr>
+        <td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td class="w-50">Nome</td>
+                <td class="w-50">Tipo</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="w-50">node</td>
+                <td class="w-50">CXMLNode &</td>
+              </tr>
+              <tr>
+                <td class="w-50">valorCampo</td>
+                <td class="w-50">String &</td>
+              </tr>
+              <tr>
+                <td class="w-50">ptrLista</td>
+                <td class="w-50">const ListaListas *</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Diagrama de Sequência</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgDiagramaSequencia, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgDiagramaSequencia, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+<img id="imgDiagramaSequencia" src="../imagens/Diagrama-Seq-Itau.sis-itau-wn-app-servidor-build-D-ProjInternet-bankline-univers2--Universal2¢¢parserOrigemCampo.jpg">
+          </td>
+        </tr>
+      </tbody>
+  </div>
+</div>
+<div class="container w-75">
+    <div class="table-responsive">
+      <table class="table no-hover tbl-layout-fixo">
+        <caption>Fonte</caption>
+        <tbody class="text-start">
+          <tr>
+            <td class="td-scroll">      
+              Universal2:&nbsp;:&nbsp;parserOrigemCampo                         
+  void&nbsp;Universal2:&nbsp;:&nbsp;parserOrigemCampo&nbsp;(CXMLNode&nbsp;&&nbsp;node,&nbsp;String&nbsp;&&nbsp;valorCampo,&nbsp;const&nbsp;ListaListas&nbsp;*&nbsp;ptrLista) <br>
+  { <br>
+  StringtipoInteracaoOrigemCampo; <br>
+  StringnomeLogico&nbsp;=&nbsp;"&nbsp;"; <br>
+  StringnomeDestino; <br>
+  intposicaoCampo; <br>
+  intposicaoOrigem; <br>
+  inttamanhoCampo; <br>
+  &nbsp <br>
+  node.getAttributeNeeded&nbsp;(ATRIB_TIPO_INTERACAO,&nbsp;tipoInteracaoOrigemCampo); <br>
+  node.getAttributeNeeded&nbsp;(ATRIB_POSICAO,&nbsp;posicaoCampo); <br>
+  node.getAttributeNeeded&nbsp;(ATRIB_TAMANHO,&nbsp;tamanhoCampo); <br>
+  node.getAttribute&nbsp;(ATRIB_NOME_LOGICO,&nbsp;nomeLogico); <br>
+  if&nbsp;(_tipoInteracao&nbsp;==&nbsp;INTEGRADOR_QT) <br>
+  { <br>
+  node.getAttribute&nbsp;(ATRIB_NOME_DEST,&nbsp;nomeDestino); <br>
+  } <br>
+  &nbsp <br>
+  switch&nbsp;(nomeParaCodigo&nbsp;(tipoInteracaoOrigemCampo)) <br>
+  { <br>
+  case&nbsp;MAINFRAME: <br>
+  posicaoOrigem&nbsp;=&nbsp;posicaoCampo&nbsp;+&nbsp;calculaDeslocamentoLista&nbsp;(posicaoCampo,&nbsp;NULL); <br>
+  obterValorCampoMainframe&nbsp;(valorCampo,&nbsp;posicaoOrigem,&nbsp;tamanhoCampo); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;LISTA_MAINFRAME: <br>
+  if&nbsp;(&nbsp;ptrLista&nbsp;==&nbsp;NULL&nbsp;) <br>
+  { <br>
+  throw&nbsp;CErroCampoForaLista&nbsp;(nomeLogico,&nbsp;"listaMainframe"); <br>
+  } <br>
+  posicaoOrigem=&nbsp;ptrLista->posicaoInicial <br>
+  +&nbsp;ptrLista->posicaoAtual&nbsp;*&nbsp;ptrLista->tamanhoElementoLista <br>
+  +&nbsp;posicaoCampo <br>
+  +&nbsp;calculaDeslocamentoLista&nbsp;(ptrLista->posicaoInicial,&nbsp;ptrLista); <br>
+  obterValorCampoMainframe&nbsp;(valorCampo,&nbsp;posicaoOrigem,&nbsp;tamanhoCampo); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;LISTA_LAYOUT_MAINFRAME: <br>
+  _nodeOrigemCampoCodigoLayout&nbsp;=&nbsp;node; <br>
+  case&nbsp;LAYOUT_MAINFRAME: <br>
+  if&nbsp;(_codPrograma&nbsp;==&nbsp;"IL28"&nbsp;&&&nbsp;_posicaoOutputMainframeLayout>0) <br>
+  { <br>
+  posicaoOrigem&nbsp;=&nbsp;posicaoCampo&nbsp;+&nbsp;_posicaoListaLayout&nbsp;+&nbsp;_posicaoOutputMainframeLayout;&nbsp;//&nbsp;+&nbsp;calculaDeslocamentoLista&nbsp;(posicaoCampo,&nbsp;NULL); <br>
+  } <br>
+  else <br>
+  { <br>
+  posicaoOrigem&nbsp;=&nbsp;posicaoCampo&nbsp;+&nbsp;_posicaoListaLayout&nbsp;+&nbsp;_posicaoOutputMainframeLayout&nbsp;+&nbsp;calculaDeslocamentoLista&nbsp;(posicaoCampo,&nbsp;NULL); <br>
+  } <br>
+  obterValorCampoMainframe&nbsp;(valorCampo,&nbsp;posicaoOrigem,&nbsp;tamanhoCampo); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;BROWSER: <br>
+  posicaoOrigem&nbsp;=&nbsp;posicaoCampo&nbsp;+&nbsp;calculaDeslocamentoLista&nbsp;(posicaoCampo,&nbsp;NULL); <br>
+  _inputBrowser.getCampo&nbsp;(valorCampo,&nbsp;tamanhoCampo,&nbsp;posicaoOrigem&nbsp;+&nbsp;3,&nbsp;nomeLogico); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;LISTA_BROWSER: <br>
+  if&nbsp;(&nbsp;ptrLista&nbsp;==&nbsp;NULL&nbsp;) <br>
+  { <br>
+  throw&nbsp;CErroCampoForaLista&nbsp;(nomeLogico,&nbsp;"listaBrowser"); <br>
+  } <br>
+  posicaoOrigem=&nbsp;ptrLista->posicaoInicial <br>
+  +&nbsp;ptrLista->posicaoAtual&nbsp;*&nbsp;ptrLista->tamanhoElementoLista <br>
+  +&nbsp;posicaoCampo <br>
+  +&nbsp;calculaDeslocamentoLista&nbsp;(ptrLista->posicaoInicial,&nbsp;ptrLista); <br>
+  _inputBrowser.getCampo&nbsp;(valorCampo,&nbsp;tamanhoCampo,&nbsp;posicaoOrigem&nbsp;+&nbsp;3,&nbsp;nomeLogico); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;ADO_CONSULTA: <br>
+  if&nbsp;(_inputADO.length()&nbsp;>&nbsp;0) <br>
+  { <br>
+  StringList&nbsp;*&nbsp;registro&nbsp;=&nbsp;(StringList&nbsp;*)_inputADO[0]; <br>
+  valorCampo&nbsp;=&nbsp;(*registro)[posicaoCampo]; <br>
+  } <br>
+  else <br>
+  { <br>
+  valorCampo&nbsp;=&nbsp;""; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;ADO_CONSULTA_PAR://danavie&nbsp;-&nbsp;BKLLight&nbsp;-&nbsp;Adição&nbsp;de&nbsp;chamada&nbsp;à&nbsp;banco&nbsp;de&nbsp;dados&nbsp;com&nbsp;parametros <br>
+  if&nbsp;(_inputADO.length()&nbsp;>&nbsp;0) <br>
+  { <br>
+  StringList&nbsp;*&nbsp;registro&nbsp;=&nbsp;(StringList&nbsp;*)_inputADO[0]; <br>
+  valorCampo&nbsp;=&nbsp;(*registro)[posicaoCampo]; <br>
+  } <br>
+  else <br>
+  { <br>
+  valorCampo&nbsp;=&nbsp;""; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;LISTA_RECEBER: <br>
+  if&nbsp;(&nbsp;ptrLista&nbsp;==&nbsp;NULL&nbsp;) <br>
+  { <br>
+  throw&nbsp;CErroCampoForaLista&nbsp;(nomeLogico,&nbsp;"listaADO"); <br>
+  } <br>
+  if&nbsp;(_inputADO.length()&nbsp;>&nbsp;ptrLista->posicaoAtual) <br>
+  { <br>
+  StringList&nbsp;*&nbsp;registro&nbsp;=&nbsp;(StringList&nbsp;*)_inputADO[ptrLista->posicaoAtual]; <br>
+  valorCampo&nbsp;=&nbsp;(*registro)[posicaoCampo]; <br>
+  } <br>
+  else <br>
+  { <br>
+  valorCampo&nbsp;=&nbsp;""; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  default: <br>
+  throw&nbsp;CErroValorAtributoInvalido&nbsp;(ATRIB_TIPO_INTERACAO,&nbsp;tipoInteracaoOrigemCampo); <br>
+  } <br>
+  if&nbsp;(_tipoInteracao&nbsp;==&nbsp;INTEGRADOR_QT&nbsp;&&&nbsp;nomeDestino.length()) <br>
+  { <br>
+  String&nbsp;valorCampoTemp; <br>
+  int&nbsp;posicao&nbsp;=&nbsp;valorCampo.findString(nomeDestino); <br>
+  &nbsp <br>
+  valorCampoTemp&nbsp;=&nbsp;valorCampo; <br>
+  valorCampo&nbsp;=&nbsp;""; <br>
+  //&nbsp;para&nbsp;evitar&nbsp;tag&nbsp;duplicadas <br>
+  if&nbsp;(posicao&nbsp;!=&nbsp;2) <br>
+  { <br>
+  valorCampo&nbsp;=&nbsp;"<"; <br>
+  valorCampo&nbsp;+=&nbsp;nomeDestino; <br>
+  valorCampo&nbsp;+=&nbsp;">"; <br>
+  } <br>
+  valorCampo&nbsp;+=&nbsp;valorCampoTemp; <br>
+  if&nbsp;(posicao&nbsp;!=&nbsp;2) <br>
+  { <br>
+  valorCampo&nbsp;+=&nbsp;"</"; <br>
+  valorCampo&nbsp;+=&nbsp;nomeDestino; <br>
+  valorCampo&nbsp;+=&nbsp;">"; <br>
+  } <br>
+  } <br>
+  } <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Fluxo</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgFluxoMetodo, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgFluxoMetodo, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+            <img id="imgFluxoMetodo" src="../imagens/FluxoMetodo-Itau.sis-itau-wn-app-servidor-build-D-ProjInternet-bankline-univers2--Universal2¢¢parserOrigemCampo.jpg">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br><br><br>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><img src="../imagens/bitmap/fluxo0.bmp"  width=36 height=24>Função analisada</td>
+          <td><img src="../imagens/bitmap/fluxo13.bmp" width=36 height=24>Função chamada</td>
+          <td><img src="../imagens/bitmap/fluxo1189.bmp" width=36 height=24>Acesso a Banco de Dados</td>
+          <td><img src="../imagens/bitmap/fluxo21.bmp" width=36 height=24>
+            Condição/Ciclo :...(F) Condição Falsa /...(T) Condição Verdadeira /...(W) Ciclo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

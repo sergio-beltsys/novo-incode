@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta https-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/Incode02.ico" />
+  <link href="../styles/reset.css" rel="stylesheet" type="text/css" />
+  <link href="../styles/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/padraoCliente.css" />
+  <script type="text/javascript" src="../js/scripts.js"></script>
+  <script type="text/javascript" src="../js/sweet.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <title>Incode</title>
+</HEAD>
+<body>
+    <section class="d-flex justify-content-between header">
+        <div class="ajust-width">
+          <!-- /??/ ? usado para juntar o webserver e o scriptdir-->
+          <a href="../lista_rotas.htm">
+            <img class="logo-cliente" src="../Imagens/logo_itau.png" alt="Logo Cliente" />
+          </a>
+        </div>
+        <div>
+          <h1>Incode®- Documentação de Sistemas</h1>
+        </div>
+        <div class="text-end p-2 ajust-width">
+          <a href="http://www.beltsysplus.com.br">
+            <img class="logo-header p-2" src="../Imagens/logo-incode.png" alt="Logo Incode" /> 
+          </a>
+        </div>
+      </section>
+<br>
+<div class="container-sm">
+  <table class="table">
+    <caption>Características Função Universal2:&nbsp;:&nbsp;parserValorizacao (Univers2.cpp)</caption>
+    <tbody>
+      <tr>
+        <td class="w-50">Linha de início: 5533</td>
+      </tr>
+      <tr>
+        <td class="w-50">Linha final: 5640</td>
+      </tr>
+      <tr>
+        <td>
+          <table class="table">
+            <thead>
+              <tr>
+                <td class="w-50">Nome</td>
+                <td class="w-50">Tipo</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="w-50">node</td>
+                <td class="w-50">CXMLNode &</td>
+              </tr>
+              <tr>
+                <td class="w-50">listaValores</td>
+                <td class="w-50">StringList &</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Diagrama de Sequência</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgDiagramaSequencia, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgDiagramaSequencia, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+<img id="imgDiagramaSequencia" src="../imagens/Diagrama-Seq-Itau.sis-itau-wn-app-servidor-build-D-ProjInternet-bankline-univers2--Universal2¢¢parserValorizacao.jpg">
+          </td>
+        </tr>
+      </tbody>
+  </div>
+</div>
+<div class="container w-75">
+    <div class="table-responsive">
+      <table class="table no-hover tbl-layout-fixo">
+        <caption>Fonte</caption>
+        <tbody class="text-start">
+          <tr>
+            <td class="td-scroll">      
+              Universal2:&nbsp;:&nbsp;parserValorizacao                         
+  bool&nbsp;Universal2:&nbsp;:&nbsp;parserValorizacao&nbsp;(CXMLNode&nbsp;&&nbsp;node,&nbsp;StringList&nbsp;&&nbsp;listaValores) <br>
+  { <br>
+  CXMLNodenodeChild; <br>
+  StringnomeChild; <br>
+  StringnomeLogico; <br>
+  &nbsp <br>
+  #define&nbsp;MENU&nbsp;&nbsp;"link"&nbsp;LOCAL_FORM_MENU <br>
+  #define&nbsp;MENU_EXPANDIDO&nbsp;&nbsp;"link"&nbsp;LOCAL_FORM_MENU_EXPANDIDO <br>
+  #defineMENU_MAPA_SITE&nbsp;&nbsp;"link"&nbsp;LOCAL_FORM_MENU_MAPA_SITE <br>
+  &nbsp <br>
+  listaValores.removeAllReferences(); <br>
+  &nbsp <br>
+  //&nbsp;limpar&nbsp;tag&nbsp;SALVADADOS&nbsp;se&nbsp;transação&nbsp;veio&nbsp;do&nbsp;menu <br>
+  if&nbsp;(_interacaoAntecessora&nbsp;==&nbsp;"montamenu.exe"&nbsp;+ <br>
+  _interacaoAntecessora&nbsp;==&nbsp;MENU_EXPANDIDO&nbsp;+ <br>
+  _interacaoAntecessora&nbsp;==&nbsp;MENU&nbsp;+ <br>
+  _interacaoAntecessora&nbsp;==&nbsp;MENU_MAPA_SITE) <br>
+  { <br>
+  if&nbsp;(_codPrograma&nbsp;!=&nbsp;"GB07"&nbsp;&&&nbsp;_codPrograma&nbsp;!=&nbsp;"AJGG") <br>
+  { <br>
+  _docBKLXML.removeTag&nbsp;(TAG_UNIVERSAL2,&nbsp;TAG_SALVADADOS); <br>
+  } <br>
+  _interacaoAntecessora&nbsp;=&nbsp;""; <br>
+  } <br>
+  &nbsp <br>
+  _interacaoAntecessoraCompleta&nbsp;=&nbsp;""; <br>
+  node.getAttribute&nbsp;(ATRIB_ANTECESSOR,&nbsp;_interacaoAntecessoraCompleta); <br>
+  node.getAttribute&nbsp;(ATRIB_NOME_LOGICO,&nbsp;nomeLogico); <br>
+  #ifdef&nbsp;_DEBUG <br>
+  geraAplBkl&nbsp;(13,&nbsp;"Valorização",&nbsp;nomeLogico); <br>
+  _tabGeraApl++; <br>
+  #endif <br>
+  if&nbsp;(!_ignoraFalha&nbsp;&&&nbsp;_codPrograma&nbsp;==&nbsp;"IL01") <br>
+  { <br>
+  //&nbsp;se&nbsp;tipoResposta&nbsp;7,&nbsp;8&nbsp;ou&nbsp;9&nbsp;->só&nbsp;efetuar&nbsp;as&nbsp;operações <br>
+  if&nbsp;(&nbsp;_tipoResposta&nbsp;==&nbsp;'7'&nbsp;+&nbsp;_tipoResposta&nbsp;==&nbsp;'8'&nbsp;+&nbsp;_tipoResposta&nbsp;==&nbsp;'9'&nbsp;) <br>
+  { <br>
+  return&nbsp;false; <br>
+  } <br>
+  } <br>
+  &nbsp <br>
+  //&nbsp;Percorre&nbsp;todos&nbsp;os&nbsp;nos&nbsp;filhos <br>
+  for&nbsp;(node.child&nbsp;(nodeChild); <br>
+  !nodeChild.isNull(); <br>
+  nodeChild.nextSibling()) <br>
+  { <br>
+  nodeChild.getNodeName&nbsp;(nomeChild); <br>
+  &nbsp <br>
+  switch&nbsp;(nomeParaCodigo&nbsp;(nomeChild)) <br>
+  { <br>
+  case&nbsp;SALVA_DADOS: <br>
+  parserSalvaDados&nbsp;(nodeChild,&nbsp;_interacaoAntecessoraCompleta); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;VALORIZACAO_ENVIO: <br>
+  case&nbsp;VALORIZACAO_ENVIO_WS: <br>
+  if&nbsp;(&nbsp;parserValorizacaoEnvio&nbsp;(nodeChild,&nbsp;listaValores)&nbsp;) <br>
+  {&nbsp;//&nbsp;houve&nbsp;trocaValorizacao <br>
+  return&nbsp;true; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;VALORIZACAO_ENVIO_MAINFRAME: <br>
+  if&nbsp;(&nbsp;parserValorizacaoEnvioMainframe&nbsp;(nodeChild,&nbsp;listaValores)&nbsp;) <br>
+  {&nbsp;//&nbsp;houve&nbsp;trocaValorizacao <br>
+  return&nbsp;true; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;VALORIZACAO_FORMULARIO: <br>
+  if&nbsp;(&nbsp;parserValorizacaoFormulario&nbsp;(nodeChild,&nbsp;listaValores)&nbsp;) <br>
+  {&nbsp;//&nbsp;houve&nbsp;trocaValorizacao <br>
+  return&nbsp;true; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;OPERACAO: <br>
+  parserOperacao&nbsp;(nodeChild,&nbsp;NULL); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;TROCA_SUCESSOR: <br>
+  parserTrocaSucessor&nbsp;(nodeChild); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;GERA_ESTATISTICA: <br>
+  parserGeraEstatistica&nbsp;(nodeChild); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;TROCA_TEMPLATE: <br>
+  parserTrocaTemplate&nbsp;(nodeChild); <br>
+  break; <br>
+  &nbsp <br>
+  case&nbsp;VALORIZACAO_ENVIO_QT: <br>
+  if&nbsp;(&nbsp;parserValorizacaoEnvioQT&nbsp;(nodeChild,&nbsp;listaValores)&nbsp;) <br>
+  { <br>
+  return&nbsp;true; <br>
+  } <br>
+  break; <br>
+  &nbsp <br>
+  default: <br>
+  throw&nbsp;CErroTagInvalida&nbsp;(ATRIB_VALORIZACAO,&nbsp;nomeChild); <br>
+  } <br>
+  } <br>
+  #ifdef&nbsp;_DEBUG <br>
+  _tabGeraApl--; <br>
+  #endif <br>
+  return&nbsp;false; <br>
+  } <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table no-hover tbl-layout-fixo">
+      <caption>Fluxo</caption>
+      <tbody class="text-center">
+        <tr>
+          <td class="text-center">
+            <svg onclick="zoom(imgFluxoMetodo, 100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            <svg onclick="zoom(imgFluxoMetodo, -100);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="pointer" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-scroll">
+
+            <img id="imgFluxoMetodo" src="../imagens/FluxoMetodo-Itau.sis-itau-wn-app-servidor-build-D-ProjInternet-bankline-univers2--Universal2¢¢parserValorizacao.jpg">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br><br><br>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><img src="../imagens/bitmap/fluxo0.bmp"  width=36 height=24>Função analisada</td>
+          <td><img src="../imagens/bitmap/fluxo13.bmp" width=36 height=24>Função chamada</td>
+          <td><img src="../imagens/bitmap/fluxo1189.bmp" width=36 height=24>Acesso a Banco de Dados</td>
+          <td><img src="../imagens/bitmap/fluxo21.bmp" width=36 height=24>
+            Condição/Ciclo :...(F) Condição Falsa /...(T) Condição Verdadeira /...(W) Ciclo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
